@@ -1,0 +1,130 @@
+<html>
+  <head>
+	<title>Host messages</title>
+	<script>
+function prettyDuration(ms) {
+	const totalSeconds = Math.floor(ms/1000);
+    const h = Math.floor(totalSeconds / 3600);
+    const m = Math.floor((totalSeconds % 3600) / 60);
+    const s = Math.floor(totalSeconds % 60);
+    return (
+		(h < 10 ? "0" : "") + h + ":" +
+		(m < 10 ? "0" : "") + m + ":" +
+		(s < 10 ? "0" : "") + s
+	);
+}
+
+function updateTimerValue() {
+	const timer = document.getElementById("timer");
+	const start = timer.dataset.start;
+	if (!start) {
+		// No timer running
+		timer.innerText = prettyDuration(0);
+		return;
+	}
+	const now = (new Date()).getTime();
+	timer.innerText = prettyDuration(now - start);
+	console.log(now);
+	console.log(timer.innerText);
+}
+
+function init() {
+	document.getElementById("reset-timer").addEventListener("click", () => {
+		timer.dataset.start = "";
+		updateTimerValue();
+	});
+	document.getElementById("start-timer").addEventListener("click", () => {
+		const timer = document.getElementById("timer");
+		const start = timer.dataset.start;
+		if (start) {
+			// Timer is already running.  Do nothing.
+			return;
+		}
+		timer.dataset.start = (new Date()).getTime();
+	});
+	timer.innerText = prettyDuration(0);
+	setInterval(updateTimerValue, 1000);
+
+	document.getElementById("clear-message").addEventListener("click", () => {
+		document.getElementById("message").value = "";
+	});
+	document.getElementById("send-message").addEventListener("click", () => {
+		const message = document.getElementById("message").value;
+		console.log(message);
+		document.getElementById("message-read").textContent = message;
+	});
+}
+
+	</script>
+    <style type="text/css">
+button {
+	background-color: #006600;
+	border: 1px solid #003300;
+	border-radius: 10px;
+	color: white;
+	font-size: 2em;
+	height: 50;
+	margin: .5em;
+}
+
+#crew-div {
+	border: 10px solid black;
+	height: 450px;
+	resize: both;
+	overflow: auto;
+	width: 1200px;
+}
+
+#host-div {
+	border: 10px solid black;
+	height: 450px;
+	resize: both;
+	overflow: auto;
+	width: 1200px;
+}
+
+#message-read {
+	font-size: 10em;
+}
+
+textarea {
+	font-size: 4em;
+}
+
+#timer-label {
+	font-size: 3em;
+}
+
+#timer {
+	font-size: 5em;
+	font-weight: bold;
+}
+
+#timer-div {
+	border-bottom: 5px solid black;
+	width: 100%;
+}
+  </style>
+  </head>
+<body onload="init();">
+  <div id="host-div">
+	<div id="timer-div">
+	  <span id="timer-label">Show running time:</span>
+	  <span id="timer"></span>
+	</div>
+	<div id="message-read"></div>
+  </div>
+  <div id="crew-div">
+	<div>
+	  <button id="start-timer">Start timer</button>
+	  <button id="reset-timer">Reset timer</button>
+	</div>
+	<div>
+	  <textarea id="message" rows="1" cols="24"></textarea>
+	  <br />
+	  <button id="send-message">Send message to hosts</button>
+	  <button id="clear-message">Clear editor</button>
+	</div>
+  </div>
+</body>
+</html>
