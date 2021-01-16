@@ -24,8 +24,6 @@ function updateTimerValue() {
 	}
 	const now = (new Date()).getTime();
 	timer.innerText = prettyDuration(now - start);
-	console.log(now);
-	console.log(timer.innerText);
 }
 
 function init() {
@@ -50,7 +48,6 @@ function init() {
 	});
 	document.getElementById("send-message").addEventListener("click", () => {
 		const message = document.getElementById("message").value;
-		console.log(message);
 		document.getElementById("message-read").textContent = message;
 	});
 }
