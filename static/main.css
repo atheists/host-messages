@@ -8,6 +8,11 @@ button {
 	margin: .5em;
 }
 
+#canned-messages {
+	margin-left: 1em;
+	margin-top: 1em;
+}
+
 #crew-div {
 	border: 10px solid black;
 	height: 450px;

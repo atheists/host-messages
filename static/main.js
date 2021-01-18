@@ -39,6 +39,10 @@ function init() {
 	timer.innerText = prettyDuration(0);
 	setInterval(updateTimerValue, 1000);
 
+	const cannedMessages = document.getElementById("canned-messages");
+	cannedMessages.addEventListener("change", () => {
+		document.getElementById("message").value = cannedMessages.value;
+	});
 	document.getElementById("clear-message").addEventListener("click", () => {
 		document.getElementById("message").value = "";
 	});
