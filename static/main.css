@@ -29,13 +29,13 @@ button {
 	width: 1200px;
 }
 
-#message-read {
-	font-size: 10em;
+#message {
+	font-size: 3em;
+	margin: .25em;
 }
 
-textarea {
-	font-size: 4em;
-	margin: .25em;
+#message-read {
+	font-size: 10em;
 }
 
 #timer-label {

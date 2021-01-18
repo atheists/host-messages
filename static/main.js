@@ -10,6 +10,12 @@ function prettyDuration(ms) {
 	);
 }
 
+function sendMessage(e) {
+	e.preventDefault();
+	const message = document.getElementById("message").value;
+	document.getElementById("message-read").textContent = message;
+}
+
 function updateTimerValue() {
 	const timer = document.getElementById("timer");
 	const start = timer.dataset.start;
@@ -46,9 +52,8 @@ function init() {
 	document.getElementById("clear-message").addEventListener("click", () => {
 		document.getElementById("message").value = "";
 	});
-	document.getElementById("send-message").addEventListener("click", () => {
-		const message = document.getElementById("message").value;
-		document.getElementById("message-read").textContent = message;
-	});
+
+	document.getElementById("message-form").addEventListener("submit", sendMessage);
+	document.getElementById("send-message").addEventListener("click", sendMessage);
 }
 
