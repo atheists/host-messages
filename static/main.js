@@ -1,9 +1,9 @@
 function prettyDuration(ms) {
 	const totalSeconds = Math.floor(ms/1000);
-    const h = Math.floor(totalSeconds / 3600);
-    const m = Math.floor((totalSeconds % 3600) / 60);
-    const s = Math.floor(totalSeconds % 60);
-    return (
+	const h = Math.floor(totalSeconds / 3600);
+	const m = Math.floor((totalSeconds % 3600) / 60);
+	const s = Math.floor(totalSeconds % 60);
+	return (
 		(h < 10 ? "0" : "") + h + ":" +
 		(m < 10 ? "0" : "") + m + ":" +
 		(s < 10 ? "0" : "") + s

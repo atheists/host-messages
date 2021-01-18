@@ -1,40 +1,40 @@
 <html>
-  <head>
-	<title>Host messages</title>
-	<link rel="stylesheet" href="main.css">
-	<script src="main.js"></script>
-  </head>
-  <body onload="init();">
-	<div id="host-div">
-	  <div id="timer-div">
-		<span id="timer-label">Show running time:</span>
-		<span id="timer"></span>
-	  </div>
-	  <div id="message-read"></div>
-	</div>
-	<div id="crew-div">
-	  <div id="timer-controls-div">
-		<button id="start-timer">Start timer</button>
-		<button id="reset-timer">Reset timer</button>
-	  </div>
-	  <div>
-		<select id="canned-messages">
-		  <option>Canned messages</option>
-		  <option>CHECK MESSAGES</option>
-		  <option>DISCORD REMINDER</option>
-		  <option>LOST GUEST RENDEZVOUS</option>
-		  <option>PHONES ARE DOWN</option>
-		  <option>RELOAD RENDEZVOUS</option>
-		  <option>STREAM IS DOWN</option>
-		  <option>TIME CHECK</option>
-		</select>
-		<br />
-		<form id="message-form">
-		  <input type="text" id="message" />
-		</form>
-		<button id="send-message">Send message to hosts</button>
-		<button id="clear-message">Clear editor</button>
-	  </div>
-	</div>
-  </body>
+	<head>
+		<title>Host messages</title>
+		<link rel="stylesheet" href="main.css">
+		<script src="main.js"></script>
+	</head>
+	<body onload="init();">
+		<div id="host-div">
+			<div id="timer-div">
+				<span id="timer-label">Show running time:</span>
+				<span id="timer"></span>
+			</div>
+			<div id="message-read"></div>
+		</div>
+		<div id="crew-div">
+			<div id="timer-controls-div">
+				<button id="start-timer">Start timer</button>
+				<button id="reset-timer">Reset timer</button>
+			</div>
+			<div>
+				<select id="canned-messages">
+					<option>Canned messages</option>
+					<option>CHECK MESSAGES</option>
+					<option>DISCORD REMINDER</option>
+					<option>LOST GUEST RENDEZVOUS</option>
+					<option>PHONES ARE DOWN</option>
+					<option>RELOAD RENDEZVOUS</option>
+					<option>STREAM IS DOWN</option>
+					<option>TIME CHECK</option>
+				</select>
+				<br />
+				<form id="message-form">
+					<input type="text" id="message" />
+				</form>
+				<button id="send-message">Send message to hosts</button>
+				<button id="clear-message">Clear editor</button>
+			</div>
+		</div>
+	</body>
 </html>
