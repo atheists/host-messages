@@ -1,0 +1,52 @@
+button {
+	background-color: #006600;
+	border: 1px solid #003300;
+	border-radius: 10px;
+	color: white;
+	font-size: 2em;
+	height: 50;
+	margin: .5em;
+}
+
+#crew-div {
+	border: 10px solid black;
+	height: 450px;
+	resize: both;
+	overflow: auto;
+	width: 1200px;
+}
+
+#host-div {
+	border: 10px solid black;
+	height: 450px;
+	resize: both;
+	overflow: auto;
+	width: 1200px;
+}
+
+#message-read {
+	font-size: 10em;
+}
+
+textarea {
+	font-size: 4em;
+	margin: .25em;
+}
+
+#timer-label {
+	font-size: 3em;
+}
+
+#timer {
+	font-size: 5em;
+	font-weight: bold;
+}
+
+#timer-controls-div {
+	border-bottom: 5px solid black;
+}
+
+#timer-div {
+	border-bottom: 5px solid black;
+	width: 100%;
+}
